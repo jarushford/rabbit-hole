@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'Inception';
+  src: url('./Inception_free.ttf');
+}
+
+html {
+  background:  url(https://i.imgur.com/mj53uKp.gif) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  height: 100%;
+}
+
+.landing-page {
+
+  h1 {
+    color: #D42323;
+    cursor: default;
+    font-family: 'Inception';
+    font-size: calc(3vw + 5rem);
+    font-weight: normal;
+    margin: 20px auto;
+    text-align: center;
+    text-shadow: 0 0 3px rgba(255, 0, 0, 0.8),
+                  0 0 6px rgba(240, 19, 19, 1),
+                  0 0 9px rgba(240, 19, 19, 0.7),
+                  0 0 17px rgba(0, 0, 0, 0.95);
+  }
+
+  .buttons {
+    width: 75%;
+    margin: 400px auto 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  button {
+    font-family: 'Open Sans';
+    cursor: pointer;
+    width: 250px;
+    height: 50px;
+    font-size: 1.5rem;
+    border: 3px solid rgb(156, 57, 23);
+    border-radius: 5px;
+    background: linear-gradient(rgb(206, 62, 26), darken(rgb(206, 62, 26), 7%));
+    color: rgb(236, 212, 204);
+    box-shadow: 1px 1px 2px 1px #2a1b1062,
+                inset 0 0 3px rgba(26, 17, 17, 0.918);
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    transition: .3s;
+    outline: none;
+
+    &:hover {
+      border: 3px solid lighten(rgb(156, 57, 23), 3%);
+      box-shadow: 1px 1px 2px 1px #2a1b1062,
+                inset 0 0 3px rgba(26, 17, 17, 0.609);
+      transition: .4s;
+      transform: scale(1.03);
+    }
+
+    &:focus {
+      box-shadow: 1px 1px 2px 1px #2a1b1062,
+                inset 0 0 3px rgba(190, 47, 47, 0.972);
+      transition: .4s;
+    }
+  }
+
+}
+
