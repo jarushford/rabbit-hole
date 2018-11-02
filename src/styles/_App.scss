@@ -46,6 +46,7 @@ body {
     background: linear-gradient(rgb(206, 62, 26), darken(rgb(206, 62, 26), 7%));
     color: rgb(236, 212, 204);
     box-shadow: 1px 1px 2px 1px #2a1b1062,
+                0px 0px 10px rgba(206, 62, 26, 0.5),
                 inset 0 0 3px rgba(26, 17, 17, 0.918);
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
     transition: .3s;
@@ -54,14 +55,15 @@ body {
     &:hover {
       border: 3px solid lighten(rgb(156, 57, 23), 3%);
       box-shadow: 1px 1px 2px 1px #2a1b1062,
-                inset 0 0 3px rgba(26, 17, 17, 0.609);
+                  0px 0px 8px rgba(206, 62, 26, 0.6),
+                  inset 0 0 3px rgba(26, 17, 17, 0.609);
       transition: .4s;
       transform: scale(1.03);
     }
 
     &:focus {
-      box-shadow: 1px 1px 2px 1px #2a1b1062,
-                inset 0 0 3px rgba(190, 47, 47, 0.972);
+      box-shadow: 1px 1px 2px 1px #2c1c1162,
+                  inset 0 0 4px 1px rgba(26, 17, 17, 0.657);
       transition: .4s;
     }
   }
