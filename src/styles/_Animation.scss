@@ -3,11 +3,265 @@
   height: 100%;
   margin: 25px auto 10px 10px;
   background: rgb(236, 212, 204);
+  font-family: 'Open Sans';
 }
 
-.bugs {
+.bugs,
+.bugs2,
+.bugs3 {
   width: 80px;
   height: 100px;
   background: url('bugs.png');
   background-size: cover;
+}
+
+.frame0,
+.frame1,
+.frame2,
+.frame3,
+.frame4,
+.frame5,
+.frame6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-around;
+    padding-left: 0;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.3rem;
+  }
+
+  .brackets {
+    font-size: 1.7rem;
+  }
+}
+
+.frame1 {
+  .bugs {
+    animation: fade 1.8s ease;
+    animation-fill-mode: forwards;
+  }
+}
+
+.frame2 {
+  h3 {
+    animation: fade 1.8s ease;
+    animation-fill-mode: forwards;
+  }
+}
+
+.frame3 {
+  .pivot-arrays {
+    opacity: 0;
+    animation: fade 1.8s ease;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  .pivot {
+    animation: move-pivot 1.8s ease;
+    animation-fill-mode: forwards;
+  }
+}
+
+.frame4 {
+  .one {
+    animation: move-one 1.8s ease;
+    animation-fill-mode: forwards;
+  }
+
+  .three {
+    animation: move-three 1.8s ease;
+    animation-delay: 5.7s;
+    animation-fill-mode: forwards;
+  }
+
+  .six {
+    animation: move-six 1.8s ease;
+    animation-delay: 1.9s;
+    animation-fill-mode: forwards;
+  }
+
+  .eight {
+    animation: move-eight 1.8s ease;
+    animation-delay: 3.8s;
+    animation-fill-mode: forwards;
+  }
+
+  .brackets {
+    animation: fadeout 1.8s ease;
+    animation-delay: 7.2s;
+    animation-fill-mode: forwards;
+  }
+
+  .bugs {
+    animation: slideup 1.8s ease;
+    animation-delay: 7.2s;
+    animation-fill-mode: forwards;
+  }
+}
+
+.frame5,
+.frame6 {
+  p {
+    font-size: 1.3rem;
+  }
+
+  .function-split-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .function-container {
+    width: 150px;
+    text-align: center;
+  }
+
+  .bugs,
+  .bugs2,
+  .bugs3 {
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+.frame5 {
+  .function-container {
+    animation: slideup 1.8s ease;
+    animation-fill-mode: forwards;
+  }
+
+  .new-function {
+    animation: slidedown 1.8s ease;
+    animation-fill-mode: forwards;
+  }
+
+  .bugs2,
+  .bugs3 {
+    opacity: 0;
+    animation: fade 1.8s ease;
+    animation-delay: 1.9s;
+    animation-fill-mode: forwards;
+  }
+}
+
+.frame6 {
+  .function-container {
+    transform: translateY(-33px);
+  }
+
+  .new-function {
+    transform: translateY(27px);
+  }
+
+  h3 {
+    opacity: 0;
+    animation: fade 1.8s ease;
+    animation-fill-mode: forwards;
+  }
+}
+
+
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes move-pivot {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  
+  100% {
+    transform: translateX(-170px) translateY(-65px);
+  }
+}
+
+@keyframes move-one {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  
+  100% {
+    transform: translateX(-53px) translateY(-63px);
+  }
+}
+
+@keyframes move-three {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  
+  100% {
+    transform: translateX(-302px) translateY(-63px);
+  }
+}
+
+@keyframes move-six {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  
+  100% {
+    transform: translateX(200px) translateY(-63px);
+  }
+}
+
+@keyframes move-eight {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  
+  100% {
+    transform: translateX(150px) translateY(-63px);
+  }
+}
+
+@keyframes slideup {
+  0% {
+    transform: translateY(0);
+  }
+  
+  100% {
+    transform: translateY(-63px);
+  }
+}
+
+@keyframes slidedown {
+  0% {
+    transform: translateY(-150px);
+  }
+  
+  100% {
+    transform: translateY(0px);
+  }
 }
