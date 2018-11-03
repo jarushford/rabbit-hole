@@ -10,23 +10,95 @@ body {
 
 .CodeMirror {
   width: 95%;
-  height: 550px;
+  height: 520px;
   border-radius: 8px;
-  margin: 20px auto auto 20px;
+  margin: 35px auto;
+  font-size: 1.3rem;
+}
+
+.CodeMirror-scroll {
+  padding: 0;
 }
 
 .home-button {
   position: absolute;
   width: 70px;
   height: 70px;
-  border-radius: 35px;
+  border-radius: 55px;
   z-index: 20;
-  top: -10px;
-  left: -10px;
+  top: -13px;
+  left: -13px;
+  transition: .4s ease;
+  opacity: .9;
+  cursor: pointer;
+
+  &:hover {
+    width: 80px;
+    height: 80px;
+    transition: .4s ease;
+    opacity: 1;
+  }
+
+  &:hover i {
+    margin-bottom: 1px;
+    color: black;
+    transition: .6s ease;
+  }
 }
 
 .demo-page {
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 1fr;
+
+  .button-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .direction-button {
+    font-family: 'Open Sans';
+    cursor: pointer;
+    width: 250px;
+    margin: auto 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 1.5rem;
+    border: 3px solid rgb(156, 57, 23);
+    border-radius: 5px;
+    background: linear-gradient(rgb(206, 62, 26), darken(rgb(206, 62, 26), 8%));
+    color: rgb(236, 212, 204);
+    box-shadow: 1px 1px 2px 1px #2a1b1062,
+                0px 0px 10px rgba(206, 62, 26, 0.5),
+                inset 0 0 3px rgba(26, 17, 17, 0.918);
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    transition: .3s;
+    outline: none;
+
+    .fa-long-arrow-alt-left {
+      margin-right: 15px;
+    }
+
+    .fa-long-arrow-alt-right {
+      margin-left: 15px;
+    }
+
+    &:hover {
+      border: 3px solid lighten(rgb(156, 57, 23), 3%);
+      box-shadow: 1px 1px 2px 1px #2a1b1062,
+                  0px 0px 8px rgba(206, 62, 26, 0.6),
+                  inset 0 0 3px rgba(26, 17, 17, 0.609);
+      transition: .4s;
+      transform: scale(1.03);
+    }
+  }
+}
+
+.fa-home {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 2rem;
+  transition: .4s ease;
 }

@@ -28,34 +28,25 @@ export default class Demo extends Component {
   }`
   }
 
-  // componentDidMount() {
-  //   const readOnlyLines = [0, 1, 2, 3];
-
-  //   CodeMirror.on('beforeChange', function(cm,change) {
-  //   if (~readOnlyLines.indexOf(change.from.line) ) {
-  //       change.cancel();
-  //   }
-  // })
-  // }
-
-
-
   render() {
     return (
       <div className="demo-page">
         <button className="home-button" onClick={() => {
           this.props.goToPage('landing');
           document.querySelector('html').classList.remove('gradient');
-          }}></button>
+          }}><i className="fas fa-home"></i></button>
         <div>
           <CodeMirror options={{
               mode: 'javascript',
               theme: 'ambiance',
-              lineNumbers: true
+              lineNumbers: true,
+              readOnly: true
             }}
             value={this.codeExample}/>
-          <button>Back</button>
-          <button>Next</button>
+          <div className="button-div">
+            <button className="direction-button"><i class="fas fa-long-arrow-alt-left"></i>Back</button>
+            <button className="direction-button">Next<i class="fas fa-long-arrow-alt-right"></i></button>
+          </div>
         </div>
         <div className="animation-display">
           

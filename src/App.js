@@ -7,7 +7,7 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentPage: 'landing'
+      currentPage: 'demo'
     }
     this.pages = {
       landing: 
