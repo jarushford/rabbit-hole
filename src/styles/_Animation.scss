@@ -8,21 +8,18 @@
 
 .bugs,
 .bugs2,
-.bugs3 {
+.bugs3,
+.bugs4,
+.bugs5,
+.bugs6,
+.bugs7 {
   width: 80px;
   height: 100px;
   background: url('bugs.png');
   background-size: cover;
 }
 
-.frame0,
-.frame1,
-.frame2,
-.frame3,
-.frame4,
-.frame5,
-.frame6,
-.frame7 {
+.animation-window {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -115,7 +112,12 @@
 
 .frame5,
 .frame6,
-.frame7 {
+.frame7,
+.frame8,
+.frame9,
+.frame10,
+.frame11,
+.frame12 {
   p {
     font-size: 1.3rem;
   }
@@ -134,7 +136,11 @@
 
   .bugs,
   .bugs2,
-  .bugs3 {
+  .bugs3,
+  .bugs4,
+  .bugs5,
+  .bugs6,
+  .bugs7 {
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
@@ -163,7 +169,8 @@
 }
 
 .frame6,
-.frame7 {
+.frame7,
+.frame8 {
   .function-container {
     transform: translateY(-33px);
   }
@@ -192,6 +199,141 @@
     animation-delay: 1s;
     animation-fill-mode: forwards;
   }
+}
+
+.frame8 {
+  .one {
+    animation: move-one-2 1.8s ease;
+    animation-fill-mode: forwards;
+  }
+
+  .six {
+    animation: move-one-2 1.8s ease;
+    animation-delay: 1.9s;
+    animation-fill-mode: forwards;
+  }
+
+  .fade-arrays {
+    animation: fadeout 1.8s ease;
+    animation-delay: 3.7s;
+    animation-fill-mode: forwards;
+  }
+
+  .bugs2,
+  .bugs3 {
+    animation: slideup2 1.8s ease;
+    animation-delay: 5.2s;
+    animation-fill-mode: forwards;
+  }
+}
+
+.frame9 {
+  .second-layer-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .function-container {
+    animation: slideup 1.8s ease;
+    animation-fill-mode: forwards;
+  }
+
+  .bugs4,
+  .bugs5,
+  .bugs6,
+  .bugs7 {
+    opacity: 0;
+    animation: fade 1.8s ease;
+    animation-delay: 1.9s;
+    animation-fill-mode: forwards;
+  }
+
+  .new-function {
+    animation: slidedown 1.8s ease;
+    animation-fill-mode: forwards;
+  }
+}
+
+.frame10,
+.frame11{
+  .second-layer-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .function-container {
+    transform: translateY(-38px)
+  }
+
+  .new-function {
+    transform: translateY(-5px);
+  }
+
+  h3 {
+    opacity: 0;
+    animation: fade 1.8s ease;
+    animation-fill-mode: forwards;
+  }
+}
+
+.frame11 {
+  .new-function {
+    animation: return1 1.8s ease;
+    animation-fill-mode: forwards;
+  }
+
+  .bugs4,
+  .bugs5,
+  .bugs6,
+  .bugs7 {
+    animation: fadeout 1.8s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  .will-fade {
+    animation: fadeout 1.8s ease;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+  }
+}
+
+.frame12 {
+  .second-layer-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .function-container {
+    transform: translateY(-115px)
+  }
+
+  .return-container {
+    animation: return2 1.8s ease;
+    animation-fill-mode: forwards;
+  }
+
+  .will-fade {
+    animation: fadeout 1.8s ease;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  .bugs2,
+  .bugs3 {
+    animation: fadeout 1.8s ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+}
+
+.frame13 ul,
+.frame13 div {
+  animation: slidedown3 1.8s ease;
+  animation-fill-mode: forwards;
 }
 
 
@@ -291,5 +433,55 @@
   
   100% {
     transform: translateX(-20px) translateY(-43px);
+  }
+}
+
+@keyframes move-one-2 {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  
+  100% {
+    transform: translateX(-46px) translateY(-43px);
+  }
+}
+
+@keyframes slideup2 {
+  0% {
+    transform: translateY(0);
+  }
+  
+  100% {
+    transform: translateY(-43px);
+  }
+}
+
+@keyframes return1 {
+  0% {
+    transform: translateY(0);
+  }
+  
+  100% {
+    transform: translateY(-203px);
+  }
+}
+
+@keyframes return2 {
+  0% {
+    transform: translateY(0);
+  }
+  
+  100% {
+    transform: translateY(-280px);
+  }
+}
+
+@keyframes slidedown3 {
+  0% {
+    transform: translateY(-175px);
+  }
+  
+  100% {
+    transform: translateY(0px);
   }
 }

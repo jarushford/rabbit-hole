@@ -173,25 +173,235 @@ export default class Animation extends Component {
             </div>
           </div>,
       8:  <div className="animation-window frame8">
-            <p>5</p>
+            <div className="function-container">
+              <p>5</p>
+              <div className="bugs">qS</div>
+            </div>
+            <div className="function-split-container">
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">]</li>
+                  <li className="pivot">3</li>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">]</li>
+                </ul>
+                <ul>
+                  <li className="fade-arrays">[</li>
+                  <li className="one">1</li>
+                  <li className="fade-arrays">]</li>
+                </ul>
+                <div className="bugs2">qS(2)</div>
+              </div>
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">]</li>
+                  <li className="pivot">8</li>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">]</li>
+                </ul>
+                <ul>
+                  <li className="fade-arrays">[</li>
+                  <li className="six">6</li>
+                  <li className="fade-arrays">]</li>
+                </ul>
+                <div className="bugs3">qS(3)</div>
+              </div>
+            </div>
           </div>,
       9:  <div className="animation-window frame9">
-            <p>5</p>
+            <div className="function-container">
+              <p>5</p>
+              <div className="bugs">qS</div>
+            </div>
+
+            <div className="second-layer-container">
+              <div className="function-container">
+                <p>3</p>
+                <div className="bugs2">qS(2)</div>
+              </div>
+              <div className="function-container">
+                <p>8</p>
+                <div className="bugs3">qS(3)</div>
+              </div>
+            </div>
+
+            <div className="function-split-container">
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">1</li>
+                  <li className="pivot-arrays">]</li>
+                </ul>
+                <div className="bugs4">qS(4)</div>
+              </div>
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">]</li>
+                </ul>
+                <div className="bugs5">qS(5)</div>
+              </div>
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">6</li>
+                  <li className="pivot-arrays">]</li>
+                </ul>
+                <div className="bugs6">qS(6)</div>
+              </div>
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">]</li>
+                </ul>
+                <div className="bugs7">qS(7)</div>
+              </div>
+            </div>
           </div>,
       10:  <div className="animation-window frame10">
-            <p>5</p>
+            <div className="function-container">
+              <p>5</p>
+              <div className="bugs">qS</div>
+            </div>
+
+            <div className="second-layer-container">
+              <div className="function-container">
+                <p>3</p>
+                <div className="bugs2">qS(2)</div>
+              </div>
+              <div className="function-container">
+                <p>8</p>
+                <div className="bugs3">qS(3)</div>
+              </div>
+            </div>
+
+            <div className="function-split-container">
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">1</li>
+                  <li className="pivot-arrays">]</li>
+                </ul>
+                <h3>Length is 1!</h3>
+                <div className="bugs4">qS(4)</div>
+              </div>
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">]</li>
+                </ul>
+                <h3>Length is 0!</h3>
+                <div className="bugs5">qS(5)</div>
+              </div>
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">6</li>
+                  <li className="pivot-arrays">]</li>
+                </ul>
+                <h3>Length is 1!</h3>
+                <div className="bugs6">qS(6)</div>
+              </div>
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">]</li>
+                </ul>
+                <h3>Length is 0!</h3>
+                <div className="bugs7">qS(7)</div>
+              </div>
+            </div>
           </div>,
       11:  <div className="animation-window frame11">
-            <p>5</p>
+            <div className="function-container">
+              <p>5</p>
+              <div className="bugs">qS</div>
+            </div>
+
+            <div className="second-layer-container">
+              <div className="function-container">
+                <p>3</p>
+                <div className="bugs2">qS(2)</div>
+              </div>
+              <div className="function-container">
+                <p>8</p>
+                <div className="bugs3">qS(3)</div>
+              </div>
+            </div>
+
+            <div className="function-split-container">
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">1</li>
+                  <li className="pivot-arrays will-fade">]</li>
+                </ul>
+                <div className="bugs4">qS(4)</div>
+              </div>
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays will-fade">[</li>
+                  <li className="pivot-arrays">]</li>
+                </ul>
+                <div className="bugs5">qS(5)</div>
+              </div>
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">6</li>
+                  <li className="pivot-arrays will-fade">]</li>
+                </ul>
+                <div className="bugs6">qS(6)</div>
+              </div>
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays will-fade">[</li>
+                  <li className="pivot-arrays">]</li>
+                </ul>
+                <div className="bugs7">qS(7)</div>
+              </div>
+            </div>
           </div>,
       12:  <div className="animation-window frame12">
-            <p>5</p>
+            <div className="function-container">
+              <p>5</p>
+              <div className="bugs">qS</div>
+            </div>
+
+            <div className="second-layer-container">
+              <div className="function-container return-container">
+                <ul>
+                  <li>[</li>
+                  <li>1</li>
+                  <li>3</li>
+                  <li className="will-fade">]</li>
+                </ul>
+                <div className="bugs2">qS(2)</div>
+              </div>
+              <div className="function-container return-container">
+                <ul>
+                  <li className="will-fade">[</li>
+                  <li>6</li>
+                  <li>8</li>
+                  <li>]</li>
+                </ul>
+                <div className="bugs3">qS(3)</div>
+              </div>
+            </div>
           </div>,
       13:  <div className="animation-window frame13">
-            <p>5</p>
-          </div>,
-      14:  <div className="animation-window frame14">
-            <p>5</p>
+            <ul>
+              <li className="brackets">[</li>
+              <li>1</li>
+              <li>3</li>
+              <li>5</li>
+              <li>6</li>
+              <li>8</li>
+              <li className="brackets">]</li>
+            </ul>
+            <div className="bugs">qS</div>
           </div>
     }
   }
