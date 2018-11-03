@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Animation from './Animation';
 import CodeMirror from './../node_modules/react-codemirror/lib/Codemirror';
 import './../node_modules/codemirror/theme/ambiance.css';
 import './../node_modules/codemirror/mode/javascript/javascript';
@@ -8,8 +9,11 @@ import './styles/Main.scss';
 export default class Demo extends Component {
   constructor() {
     super()
+    this.state = {
+      animationFrame: 0
+    }
     this.codeExample = 
-  `  const arr = [1, 6, 89, 23, 56];
+  `  const arr = [1, 6, 8, 3, 5];
   quickSort(arr);
 
   function quickSort(arr) {
@@ -28,6 +32,12 @@ export default class Demo extends Component {
   }`
   }
 
+  changeAnimationFrame(direction) {
+    this.setState({
+      animationFrame: this.state.animationFrame + direction
+    })
+  }
+
   render() {
     return (
       <div className="demo-page">
@@ -44,13 +54,11 @@ export default class Demo extends Component {
             }}
             value={this.codeExample}/>
           <div className="button-div">
-            <button className="direction-button"><i class="fas fa-long-arrow-alt-left"></i>Back</button>
-            <button className="direction-button">Next<i class="fas fa-long-arrow-alt-right"></i></button>
+            <button className="direction-button" onClick={() => this.changeAnimationFrame(-1)}><i className="fas fa-long-arrow-alt-left"></i>Back</button>
+            <button className="direction-button" onClick={() => this.changeAnimationFrame(1)}>Next<i className="fas fa-long-arrow-alt-right"></i></button>
           </div>
         </div>
-        <div className="animation-display">
-          
-        </div>
+        <Animation animationFrame={this.state.animationFrame}/>
       </div>
     )
   }
