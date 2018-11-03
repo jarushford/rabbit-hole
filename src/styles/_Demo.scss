@@ -1,0 +1,32 @@
+.gradient {
+  background: linear-gradient(darken(#3F3E2A, 5%), lighten(#3F3E2A, 10%));
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+.CodeMirror {
+  width: 95%;
+  height: 550px;
+  border-radius: 8px;
+  margin: 20px auto auto 20px;
+}
+
+.home-button {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  z-index: 20;
+  top: -10px;
+  left: -10px;
+}
+
+.demo-page {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+}

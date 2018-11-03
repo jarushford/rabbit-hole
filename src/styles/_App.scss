@@ -3,6 +3,19 @@
   src: url('./Inception_free.ttf');
 }
 
+@mixin headers($font, $shadow) {
+  color: #D42323;
+  cursor: default;
+  font-family: $font;
+  font-weight: normal;
+  margin: 20px auto 0;
+  text-align: center;
+  text-shadow: 0 0 3px rgba(255, 0, 0, 0.8),
+                0 0 6px rgba(240, 19, 19, 1),
+                0 0 $shadow rgba(240, 19, 19, 0.7),
+                0 0 17px rgba(0, 0, 0, 0.95);
+}
+
 html {
   background:  url(https://i.imgur.com/mj53uKp.gif) no-repeat center center fixed;
   background-size: cover;
@@ -15,17 +28,14 @@ body {
 .landing-page {
 
   h1 {
-    color: #D42323;
-    cursor: default;
-    font-family: 'Inception';
+    @include headers('Inception', 11px);
     font-size: calc(3vw + 5rem);
-    font-weight: normal;
-    margin: 20px auto;
-    text-align: center;
-    text-shadow: 0 0 3px rgba(255, 0, 0, 0.8),
-                  0 0 6px rgba(240, 19, 19, 1),
-                  0 0 9px rgba(240, 19, 19, 0.7),
-                  0 0 17px rgba(0, 0, 0, 0.95);
+  }
+
+  h2 {
+    @include headers('Open Sans', 0);
+    margin-top: 0;
+    letter-spacing: 9px;
   }
 
   .buttons {
@@ -43,7 +53,7 @@ body {
     font-size: 1.5rem;
     border: 3px solid rgb(156, 57, 23);
     border-radius: 5px;
-    background: linear-gradient(rgb(206, 62, 26), darken(rgb(206, 62, 26), 7%));
+    background: linear-gradient(rgb(206, 62, 26), darken(rgb(206, 62, 26), 8%));
     color: rgb(236, 212, 204);
     box-shadow: 1px 1px 2px 1px #2a1b1062,
                 0px 0px 10px rgba(206, 62, 26, 0.5),
