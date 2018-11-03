@@ -132,28 +132,65 @@ export default class Animation extends Component {
               </div>
             </div>
           </div>,
-      7:  <div className="animation-window frame5">
+      7:  <div className="animation-window frame7">
+            <div className="function-container">
+              <p>5</p>
+              <div className="bugs">qS</div>
+            </div>
+            <div className="function-split-container">
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">]</li>
+                  <li></li>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">]</li>
+                </ul>
+                <ul>
+                  <li className="">[</li>
+                  <li className="">1</li>
+                  <li className="pivot">3</li>
+                  <li className="">]</li>
+                </ul>
+                <div className="bugs2">qS(2)</div>
+              </div>
+              <div className="function-container new-function">
+                <ul>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">]</li>
+                  <li></li>
+                  <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">]</li>
+                </ul>
+                <ul>
+                  <li className="">[</li>
+                  <li className="">6</li>
+                  <li className="pivot">8</li>
+                  <li className="">]</li>
+                </ul>
+                <div className="bugs3">qS(3)</div>
+              </div>
+            </div>
+          </div>,
+      8:  <div className="animation-window frame8">
             <p>5</p>
           </div>,
-      8:  <div className="animation-window frame5">
+      9:  <div className="animation-window frame9">
             <p>5</p>
           </div>,
-      9:  <div className="animation-window frame5">
+      10:  <div className="animation-window frame10">
             <p>5</p>
           </div>,
-      10:  <div className="animation-window frame5">
+      11:  <div className="animation-window frame11">
             <p>5</p>
           </div>,
-      11:  <div className="animation-window frame5">
+      12:  <div className="animation-window frame12">
             <p>5</p>
           </div>,
-      12:  <div className="animation-window frame5">
+      13:  <div className="animation-window frame13">
             <p>5</p>
           </div>,
-      13:  <div className="animation-window frame5">
-            <p>5</p>
-          </div>,
-      14:  <div className="animation-window frame5">
+      14:  <div className="animation-window frame14">
             <p>5</p>
           </div>
     }
