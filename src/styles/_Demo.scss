@@ -167,24 +167,38 @@ body {
   @include highlighter(22px, 140px)
 }
 
-.modal {
+.modal,
+.description-modal {
   position: absolute;
-  top: 18px;
-  right: 0;
-  width: 420px;
   height: 50px;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
   background: linear-gradient(lighten(rgb(206, 62, 26), 10%), darken(rgb(206, 62, 26), 8%));
   box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.4);
   z-index: 9;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   transition: ease .7s;
 }
 
-.fa-chevron-circle-right {
+.modal {
+  top: 18px;
+  right: 0;
+  width: 420px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  justify-content: flex-start;
+}
+
+.description-modal {
+  top: 385px;
+  left: 0;
+  width: 520px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  justify-content: flex-end;
+}
+
+.fa-chevron-circle-right,
+.fa-info-circle {
   margin-left: 10px;
   font-size: 2rem;
   color: white;
@@ -198,14 +212,14 @@ body {
   }
 }
 
-.modal-dropdown {
+.fa-info-circle {
+  margin-right: 10px;
+}
+
+.modal-dropdown,
+.description-modal-dropdown {
   box-sizing: border-box;
-  position: absolute;
-  top: 15px;
-  right: 0;
-  width: 395px;
-  height: 350px;
-  border-bottom-left-radius: 30px;
+  position: absolute;  
   background: white;
   opacity: .97;
   box-shadow: -1px 1px 10px 0px rgba(0, 0, 0, 0.4);
@@ -213,9 +227,7 @@ body {
   transition: ease .7s;
   margin: 50px auto 0;
   padding: 30px;
-  font-size: 1.5rem;
   font-family: 'Open Sans';
-  line-height: 30px;
 
   p {
     transition: .4s;
@@ -225,6 +237,31 @@ body {
   span {
     font-weight: bold;
     font-size: 1.8rem;
+  }
+}
+
+.modal-dropdown {
+  top: 15px;
+  right: 0;
+  height: 350px;
+  width: 395px;
+  border-bottom-left-radius: 5px;
+  font-size: 1.5rem;
+  line-height: 30px;
+}
+
+.description-modal-dropdown {
+  top: 360px;
+  left: 0;
+  height: 150px;
+  width: 495px;
+  border-bottom-right-radius: 5px;
+  font-size: .9rem;
+  padding-bottom: 0;
+
+  p {
+    width: 100%;
+    height: 80%;
   }
 }
 
@@ -247,6 +284,26 @@ body {
   }
 
   & ~ .modal-dropdown p {
+    opacity: 0;
+    transition: ease .4s;
+  }
+}
+
+.hide-description-modal {
+  top: 65px;
+  left: -470px;
+  transition: ease .7s;
+  transition-delay: .4s;
+
+  & ~ .description-modal-dropdown {
+    left: -500px;
+    top: 65px;
+    height: 0px;
+    transition: ease .7s;
+    transition-delay: .4s;
+  }
+
+  & ~ .description-modal-dropdown p {
     opacity: 0;
     transition: ease .4s;
   }

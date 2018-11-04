@@ -33,14 +33,6 @@ export default class Demo extends Component {
   }`
   }
 
-  componentDidUpdate() {
-    if (this.state.animationFrame === 0) {
-      document.querySelector('.back-button').classList.add('disabled-button');
-    } else {
-      document.querySelector('.back-button').classList.remove('disabled-button');
-    }
-  }
-
   changeAnimationFrame(direction) {
     if (this.state.animationFrame === 13 && direction === 1) {
       this.setState({
@@ -53,11 +45,20 @@ export default class Demo extends Component {
         animationFrame: this.state.animationFrame + direction,
         highlighterClass: `highlighter${this.state.animationFrame + direction}`
       })
+    } else if (this.state.animationFrame === 0 && direction === -1) {
+      this.setState({
+        animationFrame: 13,
+        highlighterClass: `highlighter13`
+      })
     }
   }
 
   toggleModal() {
     document.querySelector('.modal').classList.toggle('hide-modal');
+  }
+
+  toggleDescriptionModal() {
+    document.querySelector('.description-modal').classList.toggle('hide-description-modal');
   }
 
   render() {
@@ -78,12 +79,15 @@ export default class Demo extends Component {
               readOnly: true
             }}
             value={this.codeExample}/>
+          <div className="description-modal"><i className="fas fa-info-circle" onClick={this.toggleDescriptionModal}></i></div>
+          <div className="description-modal-dropdown"><p>Some stuff saying stuff!asd ;fkjnads;kjfna ;kejdf;kanrd;kfgjnse; adkfjnad;kjvna ;kedjsnv;kjna erd;kgjnaes;dkfjvnae; sdgkjvna;eskd jbvnaes;dkjbvnaes;dkjvbnaes d;kxbjardfg</p></div>
           <div className="button-div">
-            <button className="direction-button back-button disabled-button" onClick={() => this.changeAnimationFrame(-1)}><i className="fas fa-long-arrow-alt-left"></i>Back</button>
+            <button className="direction-button back-button" onClick={() => this.changeAnimationFrame(-1)}><i className="fas fa-long-arrow-alt-left"></i>Back</button>
             <button className="direction-button" onClick={() => this.changeAnimationFrame(1)}>Next<i className="fas fa-long-arrow-alt-right"></i></button>
           </div>
         </div>
-        <Animation animationFrame={this.state.animationFrame}/>
+        <Animation animationFrame={this.state.animationFrame}
+          toggleButtons={this.toggleButtons}/>
       </div>
     )
   }
