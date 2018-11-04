@@ -208,7 +208,7 @@
   }
 
   .six {
-    animation: move-one-2 1.8s ease;
+    animation: move-eight-2 1.8s ease;
     animation-delay: 1.9s;
     animation-fill-mode: forwards;
   }
@@ -362,7 +362,7 @@
   }
   
   100% {
-    transform: translateX(-170px) translateY(-65px);
+    transform: translateX(-165px) translateY(-65px);
   }
 }
 
@@ -443,6 +443,16 @@
   
   100% {
     transform: translateX(-46px) translateY(-43px);
+  }
+}
+
+@keyframes move-eight-2 {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  
+  100% {
+    transform: translateX(46px) translateY(-43px);
   }
 }
 

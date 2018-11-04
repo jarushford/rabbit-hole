@@ -9,8 +9,8 @@ export default class Animation extends Component {
             <ul>
               <li className="brackets">[</li>
               <li>1</li>
-              <li>6</li>
               <li>8</li>
+              <li>6</li>
               <li>3</li>
               <li>5</li>
               <li className="brackets">]</li>
@@ -20,8 +20,8 @@ export default class Animation extends Component {
             <ul>
               <li className="brackets">[</li>
               <li>1</li>
-              <li>6</li>
               <li>8</li>
+              <li>6</li>
               <li>3</li>
               <li>5</li>
               <li className="brackets">]</li>
@@ -32,8 +32,8 @@ export default class Animation extends Component {
             <ul>
               <li className="brackets">[</li>
               <li>1</li>
-              <li>6</li>
               <li>8</li>
+              <li>6</li>
               <li>3</li>
               <li>5</li>
               <li className="brackets">]</li>
@@ -52,8 +52,8 @@ export default class Animation extends Component {
             <ul>
               <li className="brackets">[</li>
               <li>1</li>
-              <li>6</li>
               <li>8</li>
+              <li>6</li>
               <li>3</li>
               <li className="pivot">5</li>
               <li className="brackets">]</li>
@@ -71,8 +71,8 @@ export default class Animation extends Component {
             <ul>
               <li className="brackets">[</li>
               <li className="one">1</li>
-              <li className="six">6</li>
-              <li className="eight">8</li>
+              <li className="six">8</li>
+              <li className="eight">6</li>
               <li className="three">3</li>
               <li className="brackets">]</li>
             </ul>
@@ -96,8 +96,8 @@ export default class Animation extends Component {
               <div className="function-container new-function">
                 <ul>
                   <li className="pivot-arrays">[</li>
-                  <li className="pivot-arrays">6</li>
                   <li className="pivot-arrays">8</li>
+                  <li className="pivot-arrays">6</li>
                   <li className="pivot-arrays">]</li>
                 </ul>
                 <div className="bugs3">qS(3)</div>
@@ -123,8 +123,8 @@ export default class Animation extends Component {
               <div className="function-container new-function">
                 <ul>
                   <li className="pivot-arrays">[</li>
-                  <li className="pivot-arrays">6</li>
                   <li className="pivot-arrays">8</li>
+                  <li className="pivot-arrays">6</li>
                   <li className="pivot-arrays">]</li>
                 </ul>
                 <h3>Length is 2</h3>
@@ -164,8 +164,8 @@ export default class Animation extends Component {
                 </ul>
                 <ul>
                   <li className="">[</li>
-                  <li className="">6</li>
-                  <li className="pivot">8</li>
+                  <li className="">8</li>
+                  <li className="pivot">6</li>
                   <li className="">]</li>
                 </ul>
                 <div className="bugs3">qS(3)</div>
@@ -197,13 +197,13 @@ export default class Animation extends Component {
                 <ul>
                   <li className="pivot-arrays">[</li>
                   <li className="pivot-arrays">]</li>
-                  <li className="pivot">8</li>
+                  <li className="pivot">6</li>
                   <li className="pivot-arrays">[</li>
                   <li className="pivot-arrays">]</li>
                 </ul>
                 <ul>
                   <li className="fade-arrays">[</li>
-                  <li className="six">6</li>
+                  <li className="six">8</li>
                   <li className="fade-arrays">]</li>
                 </ul>
                 <div className="bugs3">qS(3)</div>
@@ -222,7 +222,7 @@ export default class Animation extends Component {
                 <div className="bugs2">qS(2)</div>
               </div>
               <div className="function-container">
-                <p>8</p>
+                <p>6</p>
                 <div className="bugs3">qS(3)</div>
               </div>
             </div>
@@ -246,7 +246,6 @@ export default class Animation extends Component {
               <div className="function-container new-function">
                 <ul>
                   <li className="pivot-arrays">[</li>
-                  <li className="pivot-arrays">6</li>
                   <li className="pivot-arrays">]</li>
                 </ul>
                 <div className="bugs6">qS(6)</div>
@@ -254,6 +253,7 @@ export default class Animation extends Component {
               <div className="function-container new-function">
                 <ul>
                   <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">8</li>
                   <li className="pivot-arrays">]</li>
                 </ul>
                 <div className="bugs7">qS(7)</div>
@@ -272,7 +272,7 @@ export default class Animation extends Component {
                 <div className="bugs2">qS(2)</div>
               </div>
               <div className="function-container">
-                <p>8</p>
+                <p>6</p>
                 <div className="bugs3">qS(3)</div>
               </div>
             </div>
@@ -298,18 +298,18 @@ export default class Animation extends Component {
               <div className="function-container new-function">
                 <ul>
                   <li className="pivot-arrays">[</li>
-                  <li className="pivot-arrays">6</li>
                   <li className="pivot-arrays">]</li>
                 </ul>
-                <h3>Length is 1!</h3>
+                <h3>Length is 0!</h3>
                 <div className="bugs6">qS(6)</div>
               </div>
               <div className="function-container new-function">
                 <ul>
                   <li className="pivot-arrays">[</li>
+                  <li className="pivot-arrays">8</li>
                   <li className="pivot-arrays">]</li>
                 </ul>
-                <h3>Length is 0!</h3>
+                <h3>Length is 1!</h3>
                 <div className="bugs7">qS(7)</div>
               </div>
             </div>
@@ -326,7 +326,7 @@ export default class Animation extends Component {
                 <div className="bugs2">qS(2)</div>
               </div>
               <div className="function-container">
-                <p>8</p>
+                <p>6</p>
                 <div className="bugs3">qS(3)</div>
               </div>
             </div>
@@ -350,7 +350,6 @@ export default class Animation extends Component {
               <div className="function-container new-function">
                 <ul>
                   <li className="pivot-arrays">[</li>
-                  <li className="pivot-arrays">6</li>
                   <li className="pivot-arrays will-fade">]</li>
                 </ul>
                 <div className="bugs6">qS(6)</div>
@@ -358,6 +357,7 @@ export default class Animation extends Component {
               <div className="function-container new-function">
                 <ul>
                   <li className="pivot-arrays will-fade">[</li>
+                  <li className="pivot-arrays">8</li>
                   <li className="pivot-arrays">]</li>
                 </ul>
                 <div className="bugs7">qS(7)</div>
