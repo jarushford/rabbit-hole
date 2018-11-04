@@ -83,7 +83,7 @@ export default class Demo extends Component {
           document.querySelector('html').classList.remove('gradient');
           }}><i className="fas fa-home"></i></button>
         <div className="modal"><i className="fas fa-chevron-circle-right" onClick={this.toggleModal}></i></div>
-        <div className="modal-dropdown"><p><span>Recursion</span> is a programming pattern by which we are able to complete a repeptitive action by calling a function within its own body until a base case is met and we exit the function. Click through the demo for a more in-depth explanation.</p></div>
+        <div className="modal-dropdown"><p><span>Recursion</span> is a programming pattern by which we are able to complete a repeptitive action by calling a function within its own body until a base case is met and we exit the function. Hit the <span className="span2">info slider</span> in the top left and click through the demo for a more in-depth explanation.</p></div>
         <div>
           <div className={this.state.highlighterClass}></div>
           <CodeMirror options={{
