@@ -21,7 +21,7 @@ body {
 }
 
 .CodeMirror-line {
-cursor: default;
+  cursor: default;
 }
 
 .home-button {
@@ -126,8 +126,8 @@ cursor: default;
   width: 480px;
   height: $height;
   top: $top;
-  left: 45px;
-  background: linear-gradient(to right, rgba(93, 148, 219, 0.356) 55%, #202020);
+  left: calc(1% + 35px);
+  background: linear-gradient(to right, rgba(93, 148, 219, 0.356) 90%, #202020);
   z-index: 5;
 }
 
