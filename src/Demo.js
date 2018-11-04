@@ -56,6 +56,10 @@ export default class Demo extends Component {
     }
   }
 
+  toggleModal() {
+    document.querySelector('.modal').classList.toggle('hide-modal');
+  }
+
   render() {
     return (
       <div className="demo-page">
@@ -63,6 +67,8 @@ export default class Demo extends Component {
           this.props.goToPage('landing');
           document.querySelector('html').classList.remove('gradient');
           }}><i className="fas fa-home"></i></button>
+        <div className="modal"><i class="fas fa-chevron-circle-right" onClick={this.toggleModal}></i></div>
+        <div className="modal-dropdown"></div>
         <div>
           <div className={this.state.highlighterClass}></div>
           <CodeMirror options={{
