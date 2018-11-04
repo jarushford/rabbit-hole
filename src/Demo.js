@@ -10,7 +10,8 @@ export default class Demo extends Component {
   constructor() {
     super()
     this.state = {
-      animationFrame: 0
+      animationFrame: 0,
+      highlighterClass: "highlighter0"
     }
     this.codeExample = 
   `  const arr = [1, 6, 8, 3, 5];
@@ -32,10 +33,27 @@ export default class Demo extends Component {
   }`
   }
 
+  componentDidUpdate() {
+    if (this.state.animationFrame === 0) {
+      document.querySelector('.back-button').classList.add('disabled-button');
+    } else {
+      document.querySelector('.back-button').classList.remove('disabled-button');
+    }
+  }
+
   changeAnimationFrame(direction) {
-    this.setState({
-      animationFrame: this.state.animationFrame + direction
-    })
+    if (this.state.animationFrame === 13 && direction === 1) {
+      this.setState({
+        animationFrame: 0,
+        highlighterClass: `highlighter0`
+      })
+    } else if (this.state.animationFrame > 0 && direction === -1 ||
+     direction === 1) {
+      this.setState({
+        animationFrame: this.state.animationFrame + direction,
+        highlighterClass: `highlighter${this.state.animationFrame + direction}`
+      })
+    }
   }
 
   render() {
@@ -46,6 +64,7 @@ export default class Demo extends Component {
           document.querySelector('html').classList.remove('gradient');
           }}><i className="fas fa-home"></i></button>
         <div>
+          <div className={this.state.highlighterClass}></div>
           <CodeMirror options={{
               mode: 'javascript',
               theme: 'ambiance',
@@ -54,7 +73,7 @@ export default class Demo extends Component {
             }}
             value={this.codeExample}/>
           <div className="button-div">
-            <button className="direction-button" onClick={() => this.changeAnimationFrame(-1)}><i className="fas fa-long-arrow-alt-left"></i>Back</button>
+            <button className="direction-button back-button disabled-button" onClick={() => this.changeAnimationFrame(-1)}><i className="fas fa-long-arrow-alt-left"></i>Back</button>
             <button className="direction-button" onClick={() => this.changeAnimationFrame(1)}>Next<i className="fas fa-long-arrow-alt-right"></i></button>
           </div>
         </div>

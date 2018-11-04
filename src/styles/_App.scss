@@ -22,10 +22,6 @@ html {
   height: 100%;
 }
 
-body {
-  height: 100%;
-}
-
 .landing-page {
 
   h1 {
@@ -41,7 +37,7 @@ body {
 
   .buttons {
     width: 75%;
-    margin: 400px auto 0;
+    margin: 340px auto 0;
     display: flex;
     justify-content: space-between;
   }
@@ -54,7 +50,7 @@ body {
     font-size: 1.5rem;
     border: 3px solid rgb(156, 57, 23);
     border-radius: 5px;
-    background: linear-gradient(rgb(206, 62, 26), darken(rgb(206, 62, 26), 8%));
+    background: linear-gradient(lighten(rgb(206, 62, 26), 10%), darken(rgb(206, 62, 26), 8%));    
     color: rgb(236, 212, 204);
     box-shadow: 1px 1px 2px 1px #2a1b1062,
                 0px 0px 10px rgba(206, 62, 26, 0.5),

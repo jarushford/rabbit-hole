@@ -12,12 +12,16 @@ body {
   width: 95%;
   height: 520px;
   border-radius: 8px;
-  margin: 35px auto;
-  font-size: 1.3rem;
+  margin: 35px auto 20px;
+  font-size: 1.1rem;
 }
 
 .CodeMirror-scroll {
   padding: 0;
+}
+
+.CodeMirror-line {
+cursor: default;
 }
 
 .home-button {
@@ -49,12 +53,12 @@ body {
 .demo-page {
   display: grid;
   width: 100%;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 600px;
 
   .button-div {
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 0;
   }
 
   .direction-button {
@@ -69,7 +73,7 @@ body {
     font-size: 1.5rem;
     border: 3px solid rgb(156, 57, 23);
     border-radius: 5px;
-    background: linear-gradient(rgb(206, 62, 26), darken(rgb(206, 62, 26), 8%));
+    background: linear-gradient(lighten(rgb(206, 62, 26), 10%), darken(rgb(206, 62, 26), 8%));
     color: rgb(236, 212, 204);
     box-shadow: 1px 1px 2px 1px #2a1b1062,
                 0px 0px 10px rgba(206, 62, 26, 0.5),
@@ -95,10 +99,69 @@ body {
       transform: scale(1.03);
     }
   }
+
+  .disabled-button {
+    cursor: default;
+    background: linear-gradient(darken(rgb(206, 62, 26), 10%), darken(rgb(206, 62, 26), 15%));
+    color: darken(rgb(236, 212, 204), 15%);
+
+    &:hover {    
+      border: 3px solid rgb(156, 57, 23);
+      box-shadow: 1px 1px 2px 1px #2a1b1062,
+                0px 0px 10px rgba(206, 62, 26, 0.5),
+                inset 0 0 3px rgba(26, 17, 17, 0.918);
+      transform: scale(1);
+    }
+  }
 }
 
 .fa-home {
   color: rgba(0, 0, 0, 0.7);
   font-size: 2rem;
   transition: .4s ease;
+}
+
+@mixin highlighter($height, $top) {
+  position: absolute;
+  width: 480px;
+  height: $height;
+  top: $top;
+  left: 45px;
+  background: linear-gradient(to right, rgba(93, 148, 219, 0.356) 55%, #202020);
+  z-index: 5;
+}
+
+.highlighter0 {
+  @include highlighter(22px, 39px)
+}
+
+.highlighter1 {
+  @include highlighter(22px, 60px)
+}
+
+.highlighter2,
+.highlighter6,
+.highlighter10 {
+  @include highlighter(22px, 119px)
+}
+
+.highlighter3,
+.highlighter7 {
+  @include highlighter(62px, 200px)
+}
+
+.highlighter4,
+.highlighter8 {
+  @include highlighter(62px, 280px)
+}
+
+.highlighter5,
+.highlighter9,
+.highlighter12,
+.highlighter13 {
+  @include highlighter(22px, 340px)
+}
+
+.highlighter11 {
+  @include highlighter(22px, 140px)
 }
