@@ -1,18 +1,56 @@
 .practice-page {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 90% 10%;
   margin: 0 10px;
+}
+
+.direction-button {
+  font-family: 'Open Sans';
+  cursor: pointer;
+  width: 250px;
+  margin: auto auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 1.5rem;
+  border: 3px solid rgb(156, 57, 23);
+  border-radius: 5px;
+  background: linear-gradient(lighten(rgb(206, 62, 26), 10%), darken(rgb(206, 62, 26), 8%));
+  color: rgb(236, 212, 204);
+  box-shadow: 1px 1px 2px 1px #2a1b1062,
+              0px 0px 10px rgba(206, 62, 26, 0.5),
+              inset 0 0 3px rgba(26, 17, 17, 0.918);
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+  transition: .3s;
+  outline: none;
+
+  .fa-long-arrow-alt-left {
+    margin-right: 18px;
+  }
+
+  .fa-long-arrow-alt-right {
+    margin-left: 18px;
+  }
+
+  &:hover {
+    border: 3px solid lighten(rgb(156, 57, 23), 3%);
+    box-shadow: 1px 1px 2px 1px #2a1b1062,
+                0px 0px 8px rgba(206, 62, 26, 0.6),
+                inset 0 0 3px rgba(26, 17, 17, 0.609);
+    transition: .4s;
+    transform: scale(1.03);
+  }
 }
 
 .solution-editor {
   position: relative;
-  transform: rotate3d(0, 1, 0, 180deg);
   cursor: pointer;
   
   &::before {
     position: absolute;
     content: 'Click to reveal answer';
-    transform: rotate3d(0, 1, 0, 180deg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +60,7 @@
     top: 35px;
     left: 14px;
     right: 14px;
-    bottom: 19px;
+    bottom: 7px;
     background: #202020;
     border-radius: 5px;
     z-index: 10;
@@ -36,6 +74,7 @@
   &::before {
     animation: reveal2 2s ease;
     animation-fill-mode: forwards;
+    transform: rotate3d(0, 1, 0, 180deg);
   }
 }
 
@@ -46,6 +85,7 @@
   &::before {
     animation: reveal2two 2s ease;
     animation-fill-mode: forwards;
+    transform: rotate3d(0, 1, 0, 180deg);
   }
 }
 
@@ -77,10 +117,10 @@
 }
 
 @keyframes reveal2two {
-  0%, 22% {
+  0%, 28% {
     opacity: 0;
   }
-  47%, 100% {
+  43%, 100% {
     opacity: 1;
   }
 }

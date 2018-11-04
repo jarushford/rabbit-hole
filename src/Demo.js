@@ -67,7 +67,7 @@ export default class Demo extends Component {
           this.props.goToPage('landing');
           document.querySelector('html').classList.remove('gradient');
           }}><i className="fas fa-home"></i></button>
-        <div className="modal"><i class="fas fa-chevron-circle-right" onClick={this.toggleModal}></i></div>
+        <div className="modal"><i className="fas fa-chevron-circle-right" onClick={this.toggleModal}></i></div>
         <div className="modal-dropdown"><p><span>Recursion</span> is a programming pattern by which we are able to complete a repeptitive action by calling a function within its own body until a base case is met and we exit the function.</p></div>
         <div>
           <div className={this.state.highlighterClass}></div>
