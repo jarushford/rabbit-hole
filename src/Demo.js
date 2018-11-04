@@ -14,7 +14,7 @@ export default class Demo extends Component {
       highlighterClass: "highlighter0"
     }
     this.codeExample = 
-  `  const arr = [1, 6, 8, 3, 5];
+  `  const arr = [1, 8, 6, 3, 5];
   quickSort(arr);
 
   function quickSort(arr) {

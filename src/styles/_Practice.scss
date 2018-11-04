@@ -1,0 +1,86 @@
+.practice-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 10px;
+}
+
+.solution-editor {
+  position: relative;
+  transform: rotate3d(0, 1, 0, 180deg);
+  cursor: pointer;
+  
+  &::before {
+    position: absolute;
+    content: 'Click to reveal answer';
+    transform: rotate3d(0, 1, 0, 180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans';
+    font-size: 2rem;
+    color: rgba(210, 210, 210, 0.9);
+    top: 35px;
+    left: 14px;
+    right: 14px;
+    bottom: 19px;
+    background: #202020;
+    border-radius: 5px;
+    z-index: 10;
+  }
+}
+
+.reveal-answer {
+  animation: reveal 2s ease;
+  animation-fill-mode: forwards;
+
+  &::before {
+    animation: reveal2 2s ease;
+    animation-fill-mode: forwards;
+  }
+}
+
+.hide-answer {
+  animation: revealback 2s ease;
+  animation-fill-mode: forwards;
+
+  &::before {
+    animation: reveal2two 2s ease;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 0, 0);
+  }
+}
+
+@keyframes revealback {
+  0% {
+    transform: rotate3d(0, 0, 0, 0);
+  }
+  100% {
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+}
+
+@keyframes reveal2 {
+  0%, 23% {
+    opacity: 1;
+  }
+  37%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes reveal2two {
+  0%, 22% {
+    opacity: 0;
+  }
+  47%, 100% {
+    opacity: 1;
+  }
+}
