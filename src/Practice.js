@@ -95,8 +95,8 @@ export default class Practice extends Component {
         e.target.classList.add('reveal-answer');
         e.target.classList.remove('hide-answer');
       } else {
-        e.target.classList.add('hide-answer');
-        e.target.classList.remove('reveal-answer');
+        document.querySelector('.solution-editor').classList.add('hide-answer');
+        document.querySelector('.solution-editor').classList.remove('reveal-answer');
       }
     }
   }
@@ -115,6 +115,8 @@ export default class Practice extends Component {
         currentProblem: this.state.currentProblem + direction,
       })
     }
+    document.querySelector('.solution-editor').classList.add('hide-answer');
+    document.querySelector('.solution-editor').classList.remove('reveal-answer');
   }
 
   render() {
@@ -127,14 +129,15 @@ export default class Practice extends Component {
         <CodeMirror options={{
             mode: 'javascript',
             theme: 'ambiance',
-            lineNumbers: true,
+            lineNumbers: true
           }}
           value={this.practiceFunctions[this.state.currentProblem]}
           className="practice-editor"/>
         <CodeMirror options={{
             mode: 'javascript',
             theme: 'ambiance',
-            lineNumbers: true
+            lineNumbers: true,
+            readOnly: true
           }}
           value={this.practiceSolutions[this.state.currentProblem]}
           className="solution-editor"/>

@@ -56,6 +56,10 @@
   }
 }
 
+.solution-editor::before .solution-editor {
+  scroll-behavior: smooth;
+}
+
 .reveal-answer {
   @include animations(reveal, reveal2);
 }
@@ -97,5 +101,62 @@
   }
   34%, 100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+
+  .practice-page {
+    grid-template-columns: 1fr;
+    grid-template-rows: 270px 310px 1fr;
+
+    .CodeMirror {
+      height: 260px;
+    }
+
+    .solution-editor::before {
+      top: 35px;
+      left: 2.5%;
+      right: 2.5%;
+      bottom: 15px;
+    }
+
+    .reveal-answer {
+      cursor: default;
+    }
+
+    .previous-button {
+      position: relative;
+      right: 22%;
+    }  
+
+    .next-button {
+      position: relative;
+      left: 22%;
+      margin-top: -50px;
+    }
+
+  }
+
+  @keyframes reveal2 {
+    0%, 26% {
+      opacity: 1;
+      z-index: 10;
+    }
+    37%, 100% {
+      opacity: 0;
+      z-index: 0;
+    }
+  }
+
+  @keyframes reveal2two {
+    0%, 28% {
+      opacity: 0;
+      z-index: 0;
+    }
+    34%, 100% {
+      opacity: 1;
+      z-index: 10;
+    }
   }
 }
