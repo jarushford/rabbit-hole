@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Animation from './Animation';
+import Button from './Button';
 import CodeMirror from './../node_modules/react-codemirror/lib/Codemirror';
 import './../node_modules/codemirror/theme/ambiance.css';
 import './../node_modules/codemirror/mode/javascript/javascript';
@@ -47,7 +48,7 @@ export default class Demo extends Component {
   }`
   }
 
-  changeAnimationFrame(direction) {
+  changeAnimationFrame = (direction) => {
     if (this.state.animationFrame === 13 && direction === 1) {
       this.setState({
         animationFrame: 0,
@@ -77,12 +78,10 @@ export default class Demo extends Component {
   render() {
     return (
       <div className="demo-page">
-        <button className="home-button" onClick={() => {
-          this.props.goToPage('landing');
-          document.querySelector('html').classList.remove('gradient');
-          }}>
-          <i className="fas fa-home"></i>
-        </button>
+        <Button goToPage={this.props.goToPage}
+          page={'landing'}
+          class={'home-button'}
+          icon={<i className="fas fa-home"></i>} />
         <div className="modal">
           <i className="fas fa-chevron-circle-right" onClick={this.toggleModal}></i>
         </div>
@@ -103,14 +102,18 @@ export default class Demo extends Component {
             <p>{this.captions[this.state.animationFrame]}</p>
           </div>
           <div className="button-div">
-            <button className="direction-button back-button" onClick={() => this.changeAnimationFrame(-1)}>
-              <i className="fas fa-long-arrow-alt-left"></i>
-              Back
-            </button>
-            <button className="direction-button" onClick={() => this.changeAnimationFrame(1)}>
-              Next
-              <i className="fas fa-long-arrow-alt-right"></i>
-              </button>
+            <Button functionality={this.changeAnimationFrame}
+              page={null}
+              direction={-1}
+              text={'Back'}
+              class={'direction-button back-button'}
+              icon={<i className="fas fa-long-arrow-alt-left"></i>} />
+            <Button functionality={this.changeAnimationFrame}
+              page={null}
+              direction={1}
+              text={'Next'}
+              class={'direction-button forward-button'}
+              icon={<i className="fas fa-long-arrow-alt-right"></i>} />
           </div>
         </div>
         <Animation animationFrame={this.state.animationFrame}
