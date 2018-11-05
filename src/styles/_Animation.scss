@@ -468,3 +468,38 @@
     transform: translateY(0px);
   }
 }
+
+@media screen and (max-width: 1150px) {
+  
+  .animation-window {
+    transform: scale(.9);
+    margin-right: 20px;
+    margin-left: -10px;
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  
+  .animation-window {
+    transform: scale(.8);
+    // margin-right: 20px;
+    margin-left: -30px;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  
+  .animation-window {
+    transform: scale(.7);
+    margin-left: -70px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  
+  .animation-window {
+    transform: scale(.6);
+    margin-left: -110px;
+  }
+}
+
