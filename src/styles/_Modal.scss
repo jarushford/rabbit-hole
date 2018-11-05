@@ -1,0 +1,149 @@
+@mixin modal($top, $width) {
+  position: absolute;
+  height: 50px;
+  background: linear-gradient(lighten(rgb(206, 62, 26), 10%), darken(rgb(206, 62, 26), 8%));
+  box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.4);
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  transition: ease .7s;
+  top: $top;
+  width: $width;
+}
+
+@mixin icons() {
+  margin-left: 10px;
+  font-size: 2rem;
+  color: white;
+  opacity: .8;
+  cursor: pointer;
+  transition: .4s;
+
+  &:hover {
+    opacity: 1;
+    transition: .4s;
+  }
+}
+
+@mixin dropdown($top, $height, $width, $fontsize, $margin, $boxshadow) {
+  box-sizing: border-box;
+  position: absolute;  
+  opacity: .97;
+  background: #3f3a39fd;
+  z-index: 8;
+  transition: ease .7s;
+  padding: 30px;
+  font-family: 'Open Sans';
+  top: $top;
+  height: $height;
+  width: $width;
+  font-size: $fontsize;
+  margin: $margin;
+  box-shadow: $boxshadow;
+
+  p {
+    transition: .4s;
+    transition-delay: .4s;
+    color: rgba(238, 238, 238, 0.822);
+  }
+
+  span {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: darken(rgb(206, 62, 26), 12%);
+  }
+
+  .span2 {
+    font-size: 1.2rem;
+    color: darken(rgb(206, 62, 26), 12%);
+  }
+}
+
+@mixin transition($transition, $delay) {
+  transition: $transition;
+  transition-delay: $delay;
+}
+
+.modal {
+  @include modal(18px, 420px);
+  right: 0;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  justify-content: flex-start;
+}
+
+.description-modal {
+  @include modal(385px, 520px);
+  left: 0;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  justify-content: flex-end;
+}
+
+.fa-chevron-circle-right {
+  @include icons();
+}
+
+.fa-info-circle {
+  @include icons();
+  margin-right: 10px;
+}
+
+.modal-dropdown {
+  @include dropdown(15px, 325px, 395px, 1.2rem, 25px auto 0, -1px 1px 10px 0px rgba(0, 0, 0, 0.4));
+  right: 0;
+  border-bottom-left-radius: 5px;
+  line-height: 30px;
+}
+
+.description-modal-dropdown {
+  @include dropdown(360px, 150px, 495px, .9rem, 50px auto 0, -5px 1px 15px 1px rgba(110, 110, 110, 0.4));
+  left: 0;
+  border-bottom-right-radius: 5px;
+  padding-bottom: 0;
+
+  p {
+    width: 100%;
+    height: 80%;
+  }
+}
+
+.hide-modal {
+  right: -370px;
+  @include transition(ease .5s, .4s);
+
+  .fa-chevron-circle-right {
+    transform: rotate(180deg);
+    @include transition(ease .5s, .4s);
+  }
+
+  & ~ .modal-dropdown {
+    right: -400px;
+    height: 0px;
+    @include transition(ease .5s, .4s);
+  }
+
+  & ~ .modal-dropdown p {
+    opacity: 0;
+    @include transition(ease .4s, 0);
+  }
+}
+
+.hide-description-modal {
+  top: 70px;
+  left: -470px;
+  @include transition(ease .7s, .4s);
+
+  & ~ .description-modal-dropdown {
+    left: -500px;
+    top: 65px;
+    height: 0px;
+    @include transition(ease .7s, .4s);
+    box-shadow: none;
+  }
+
+  & ~ .description-modal-dropdown p {
+    opacity: 0;
+    @include transition(ease .4s, 0);
+  }
+}
