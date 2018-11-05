@@ -1,0 +1,78 @@
+button {
+    font-family: 'Open Sans';
+    cursor: pointer;
+    width: 250px;
+    height: 50px;
+    font-size: 1.5rem;
+    border: 3px solid rgb(156, 57, 23);
+    border-radius: 5px;
+    background: linear-gradient(lighten(rgb(206, 62, 26), 10%), darken(rgb(206, 62, 26), 8%));    
+    color: rgb(236, 212, 204);
+    box-shadow: 1px 1px 2px 1px #2a1b1062,
+                0px 0px 10px rgba(206, 62, 26, 0.5),
+                inset 0 0 3px rgba(26, 17, 17, 0.918);
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    transition: .3s;
+    outline: none;
+
+    &:hover {
+      border: 3px solid lighten(rgb(156, 57, 23), 3%);
+      box-shadow: 1px 1px 2px 1px #2a1b1062,
+                  0px 0px 8px rgba(206, 62, 26, 0.6),
+                  inset 0 0 3px rgba(26, 17, 17, 0.609);
+      transition: .4s;
+      transform: scale(1.03);
+    }
+
+    &:focus {
+      box-shadow: 1px 1px 2px 1px #2c1c1162,
+                  inset 0 0 4px 1px rgba(26, 17, 17, 0.657);
+      transition: .4s;
+    }
+
+    .disabled-button {
+    cursor: default;
+    background: linear-gradient(darken(rgb(206, 62, 26), 10%), darken(rgb(206, 62, 26), 15%));
+    color: darken(rgb(236, 212, 204), 15%);
+
+      &:hover {    
+        border: 3px solid rgb(156, 57, 23);
+        box-shadow: 1px 1px 2px 1px #2a1b1062,
+                  0px 0px 10px rgba(206, 62, 26, 0.5),
+                  inset 0 0 3px rgba(26, 17, 17, 0.918);
+        transform: scale(1);
+      }
+    }
+
+  }
+
+.home-button {
+  border: none;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 55px;
+  z-index: 20;
+  top: -13px;
+  left: -13px;
+  transition: ease .6s;
+
+  & i {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 5px auto auto 4px;
+    transition: ease .6s;
+  }
+
+  &:hover {
+    width: 80px;
+    height: 80px;
+    transition: ease .4s;
+    opacity: 1;
+  }
+
+  &:hover i {
+    margin: 2px auto auto 2px;
+    color: white;
+    transition: ease .6s;
+  }
+}

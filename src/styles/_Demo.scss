@@ -1,3 +1,79 @@
+@mixin highlighter($height, $top) {
+  position: absolute;
+  width: 470px;
+  height: $height;
+  top: $top;
+  left: calc(1% + 35px);
+  background: linear-gradient(to right, rgba(93, 148, 219, 0.356) 90%, #202020);
+  z-index: 5;
+}
+
+@mixin modal($top, $width) {
+  position: absolute;
+  height: 50px;
+  background: linear-gradient(lighten(rgb(206, 62, 26), 10%), darken(rgb(206, 62, 26), 8%));
+  box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.4);
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  transition: ease .7s;
+  top: $top;
+  width: $width;
+}
+
+@mixin icons() {
+  margin-left: 10px;
+  font-size: 2rem;
+  color: white;
+  opacity: .8;
+  cursor: pointer;
+  transition: .4s;
+
+  &:hover {
+    opacity: 1;
+    transition: .4s;
+  }
+}
+
+@mixin dropdown($top, $height, $width, $fontsize, $margin, $boxshadow) {
+  box-sizing: border-box;
+  position: absolute;  
+  opacity: .97;
+  background: #3f3a39fd;
+  z-index: 8;
+  transition: ease .7s;
+  padding: 30px;
+  font-family: 'Open Sans';
+  top: $top;
+  height: $height;
+  width: $width;
+  font-size: $fontsize;
+  margin: $margin;
+  box-shadow: $boxshadow;
+
+  p {
+    transition: .4s;
+    transition-delay: .4s;
+    color: rgba(238, 238, 238, 0.822);
+  }
+
+  span {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: darken(rgb(206, 62, 26), 12%);
+  }
+
+  .span2 {
+    font-size: 1.2rem;
+    color: darken(rgb(206, 62, 26), 12%);
+  }
+}
+
+@mixin transition($transition, $delay) {
+  transition: $transition;
+  transition-delay: $delay;
+}
+
 .gradient {
   background: linear-gradient(darken(#3F3E2A, 5%), lighten(#3F3E2A, 10%));
   height: 100%;
@@ -24,32 +100,6 @@ body {
   cursor: default;
 }
 
-.home-button {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  border-radius: 55px;
-  z-index: 20;
-  top: -13px;
-  left: -13px;
-  transition: .4s ease;
-  opacity: .9;
-  cursor: pointer;
-
-  &:hover {
-    width: 80px;
-    height: 80px;
-    transition: .4s ease;
-    opacity: 1;
-  }
-
-  &:hover i {
-    margin-bottom: 1px;
-    color: black;
-    transition: .6s ease;
-  }
-}
-
 .demo-page {
   display: grid;
   width: 100%;
@@ -62,25 +112,10 @@ body {
   }
 
   .direction-button {
-    font-family: 'Open Sans';
-    cursor: pointer;
-    width: 250px;
     margin: auto 8px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    font-size: 1.5rem;
-    border: 3px solid rgb(156, 57, 23);
-    border-radius: 5px;
-    background: linear-gradient(lighten(rgb(206, 62, 26), 10%), darken(rgb(206, 62, 26), 8%));
-    color: rgb(236, 212, 204);
-    box-shadow: 1px 1px 2px 1px #2a1b1062,
-                0px 0px 10px rgba(206, 62, 26, 0.5),
-                inset 0 0 3px rgba(26, 17, 17, 0.918);
-    text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
-    transition: .3s;
-    outline: none;
     padding-bottom: 3px;
 
     .fa-long-arrow-alt-left {
@@ -91,45 +126,8 @@ body {
       margin-left: 18px;
     }
 
-    &:hover {
-      border: 3px solid lighten(rgb(156, 57, 23), 3%);
-      box-shadow: 1px 1px 2px 1px #2a1b1062,
-                  0px 0px 8px rgba(206, 62, 26, 0.6),
-                  inset 0 0 3px rgba(26, 17, 17, 0.609);
-      transition: .4s;
-      transform: scale(1.03);
-    }
   }
 
-  .disabled-button {
-    cursor: default;
-    background: linear-gradient(darken(rgb(206, 62, 26), 10%), darken(rgb(206, 62, 26), 15%));
-    color: darken(rgb(236, 212, 204), 15%);
-
-    &:hover {    
-      border: 3px solid rgb(156, 57, 23);
-      box-shadow: 1px 1px 2px 1px #2a1b1062,
-                0px 0px 10px rgba(206, 62, 26, 0.5),
-                inset 0 0 3px rgba(26, 17, 17, 0.918);
-      transform: scale(1);
-    }
-  }
-}
-
-.fa-home {
-  color: rgba(0, 0, 0, 0.7);
-  font-size: 2rem;
-  transition: .4s ease;
-}
-
-@mixin highlighter($height, $top) {
-  position: absolute;
-  width: 470px;
-  height: $height;
-  top: $top;
-  left: calc(1% + 35px);
-  background: linear-gradient(to right, rgba(93, 148, 219, 0.356) 90%, #202020);
-  z-index: 5;
 }
 
 .highlighter0 {
@@ -167,106 +165,43 @@ body {
   @include highlighter(22px, 140px)
 }
 
-.modal,
-.description-modal {
-  position: absolute;
-  height: 50px;
-  background: linear-gradient(lighten(rgb(206, 62, 26), 10%), darken(rgb(206, 62, 26), 8%));
-  box-shadow: -1px 1px 5px 0px rgba(0, 0, 0, 0.4);
-  z-index: 9;
-  display: flex;
-  align-items: center;
-  transition: ease .7s;
-}
-
 .modal {
-  top: 18px;
+  @include modal(18px, 420px);
   right: 0;
-  width: 420px;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   justify-content: flex-start;
 }
 
 .description-modal {
-  top: 385px;
+  @include modal(385px, 520px);
   left: 0;
-  width: 520px;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   justify-content: flex-end;
 }
 
-.fa-chevron-circle-right,
-.fa-info-circle {
-  margin-left: 10px;
-  font-size: 2rem;
-  color: white;
-  opacity: .9;
-  cursor: pointer;
-  transition: .4s;
-
-  &:hover {
-    opacity: 1;
-    transition: .4s;
-  }
+.fa-chevron-circle-right {
+  @include icons();
 }
 
 .fa-info-circle {
+  @include icons();
   margin-right: 10px;
 }
 
-.modal-dropdown,
-.description-modal-dropdown {
-  box-sizing: border-box;
-  position: absolute;  
-  opacity: .97;
-  background: #3f3a39fd;
-  z-index: 8;
-  transition: ease .7s;
-  padding: 30px;
-  font-family: 'Open Sans';
-
-  p {
-    transition: .4s;
-    transition-delay: .4s;
-    color: rgba(238, 238, 238, 0.822);
-  }
-
-  span {
-    font-weight: bold;
-    font-size: 1.8rem;
-    color: darken(rgb(206, 62, 26), 12%);
-  }
-
-  .span2 {
-    font-size: 1.2rem;
-    color: darken(rgb(206, 62, 26), 12%);
-  }
-}
-
 .modal-dropdown {
-  top: 15px;
+  @include dropdown(15px, 325px, 395px, 1.2rem, 25px auto 0, -1px 1px 10px 0px rgba(0, 0, 0, 0.4));
   right: 0;
-  height: 325px;
-  width: 395px;
   border-bottom-left-radius: 5px;
-  font-size: 1.2rem;
   line-height: 30px;
-  margin: 25px auto 0;
-  box-shadow: -1px 1px 10px 0px rgba(0, 0, 0, 0.4);
 }
 
 .description-modal-dropdown {
-  top: 360px;
+  @include dropdown(360px, 150px, 495px, .9rem, 50px auto 0, -5px 1px 15px 1px rgba(110, 110, 110, 0.4));
   left: 0;
-  height: 150px;
-  width: 495px;
   border-bottom-right-radius: 5px;
-  font-size: .9rem;
   padding-bottom: 0;
-  margin: 50px auto 0;
-  box-shadow: -5px 1px 15px 1px rgba(110, 110, 110, 0.4);
 
   p {
     width: 100%;
@@ -276,45 +211,40 @@ body {
 
 .hide-modal {
   right: -370px;
-  transition: ease .7s;
-  transition-delay: .4s;
+  @include transition(ease .5s, .4s);
 
   .fa-chevron-circle-right {
     transform: rotate(180deg);
-    transition: ease .7s;
-    transition-delay: .4s;
+    @include transition(ease .5s, .4s);
   }
 
   & ~ .modal-dropdown {
     right: -400px;
     height: 0px;
-    transition: ease .7s;
-    transition-delay: .4s;
+    @include transition(ease .5s, .4s);
   }
 
   & ~ .modal-dropdown p {
     opacity: 0;
-    transition: ease .4s;
+    @include transition(ease .4s, 0);
   }
 }
 
 .hide-description-modal {
   top: 70px;
   left: -470px;
-  transition: ease .7s;
-  transition-delay: .4s;
+  @include transition(ease .7s, .4s);
 
   & ~ .description-modal-dropdown {
     left: -500px;
     top: 65px;
     height: 0px;
-    transition: ease .7s;
-    transition-delay: .4s;
+    @include transition(ease .7s, .4s);
     box-shadow: none;
   }
 
   & ~ .description-modal-dropdown p {
     opacity: 0;
-    transition: ease .4s;
+    @include transition(ease .4s, 0);
   }
 }

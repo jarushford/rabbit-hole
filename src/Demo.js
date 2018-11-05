@@ -53,16 +53,15 @@ export default class Demo extends Component {
         animationFrame: 0,
         highlighterClass: `highlighter0`
       })
-    } else if (this.state.animationFrame > 0 && direction === -1 ||
-     direction === 1) {
-      this.setState({
-        animationFrame: this.state.animationFrame + direction,
-        highlighterClass: `highlighter${this.state.animationFrame + direction}`
-      })
     } else if (this.state.animationFrame === 0 && direction === -1) {
       this.setState({
         animationFrame: 13,
         highlighterClass: `highlighter13`
+      })
+    } else {
+      this.setState({
+        animationFrame: this.state.animationFrame + direction,
+        highlighterClass: `highlighter${this.state.animationFrame + direction}`
       })
     }
   }
@@ -81,8 +80,12 @@ export default class Demo extends Component {
         <button className="home-button" onClick={() => {
           this.props.goToPage('landing');
           document.querySelector('html').classList.remove('gradient');
-          }}><i className="fas fa-home"></i></button>
-        <div className="modal"><i className="fas fa-chevron-circle-right" onClick={this.toggleModal}></i></div>
+          }}>
+          <i className="fas fa-home"></i>
+        </button>
+        <div className="modal">
+          <i className="fas fa-chevron-circle-right" onClick={this.toggleModal}></i>
+        </div>
         <div className="modal-dropdown"><p><span>Recursion</span> is a programming pattern by which we are able to complete a repeptitive action by calling a function within its own body until a base case is met and we exit the function. Hit the <span className="span2">info slider</span> in the top left and click through the demo for a more in-depth explanation.</p></div>
         <div>
           <div className={this.state.highlighterClass}></div>
@@ -93,11 +96,21 @@ export default class Demo extends Component {
               readOnly: true
             }}
             value={this.codeExample}/>
-          <div className="description-modal hide-description-modal"><i className="fas fa-info-circle" onClick={this.toggleDescriptionModal}></i></div>
-          <div className="description-modal-dropdown"><p>{this.captions[this.state.animationFrame]}</p></div>
+          <div className="description-modal hide-description-modal">
+            <i className="fas fa-info-circle" onClick={this.toggleDescriptionModal}></i>
+          </div>
+          <div className="description-modal-dropdown">
+            <p>{this.captions[this.state.animationFrame]}</p>
+          </div>
           <div className="button-div">
-            <button className="direction-button back-button" onClick={() => this.changeAnimationFrame(-1)}><i className="fas fa-long-arrow-alt-left"></i>Back</button>
-            <button className="direction-button" onClick={() => this.changeAnimationFrame(1)}>Next<i className="fas fa-long-arrow-alt-right"></i></button>
+            <button className="direction-button back-button" onClick={() => this.changeAnimationFrame(-1)}>
+              <i className="fas fa-long-arrow-alt-left"></i>
+              Back
+            </button>
+            <button className="direction-button" onClick={() => this.changeAnimationFrame(1)}>
+              Next
+              <i className="fas fa-long-arrow-alt-right"></i>
+              </button>
           </div>
         </div>
         <Animation animationFrame={this.state.animationFrame}

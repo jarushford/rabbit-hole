@@ -1,18 +1,4 @@
-.animation-window {
-  width: 95%;
-  height: 100%;
-  margin: 10px;
-  background: rgba(226, 146, 119, 0.678);
-  font-family: 'Open Sans';
-}
-
-.bugs,
-.bugs2,
-.bugs3,
-.bugs4,
-.bugs5,
-.bugs6,
-.bugs7 {
+.bunny {
   width: 80px;
   height: 100px;
   background: url('bugs.png');
@@ -20,6 +6,11 @@
 }
 
 .animation-window {
+  width: 95%;
+  height: 100%;
+  margin: 10px;
+  background: rgba(226, 146, 119, 0.678);
+  font-family: 'Open Sans';
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -111,14 +102,7 @@
   }
 }
 
-.frame5,
-.frame6,
-.frame7,
-.frame8,
-.frame9,
-.frame10,
-.frame11,
-.frame12 {
+.complicated-frames {
   p {
     font-size: 1.3rem;
   }
@@ -135,13 +119,7 @@
     text-align: center;
   }
 
-  .bugs,
-  .bugs2,
-  .bugs3,
-  .bugs4,
-  .bugs5,
-  .bugs6,
-  .bugs7 {
+  .bunny {
     margin: 0 auto;
     display: flex;
     justify-content: flex-start;
@@ -240,10 +218,7 @@
     animation-fill-mode: forwards;
   }
 
-  .bugs4,
-  .bugs5,
-  .bugs6,
-  .bugs7 {
+  .level-three-bugs {
     opacity: 0;
     animation: fade 1.8s ease;
     animation-delay: 1.9s;
@@ -285,10 +260,7 @@
     animation-fill-mode: forwards;
   }
 
-  .bugs4,
-  .bugs5,
-  .bugs6,
-  .bugs7 {
+  .level-three-bugs {
     animation: fadeout 1.8s ease;
     animation-delay: 1s;
     animation-fill-mode: forwards;

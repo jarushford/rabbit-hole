@@ -1,3 +1,14 @@
+@mixin animations($ani1, $ani2) {
+  animation: $ani1 2s ease;
+  animation-fill-mode: forwards;
+
+  &::before {
+    animation: $ani2 2s ease;
+    animation-fill-mode: forwards;
+    transform: rotate3d(0, 1, 0, 180deg);
+  }
+}
+
 .practice-page {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -6,25 +17,11 @@
 }
 
 .direction-button {
-  font-family: 'Open Sans';
-  cursor: pointer;
-  width: 250px;
   margin: auto auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  font-size: 1.5rem;
-  border: 3px solid rgb(156, 57, 23);
-  border-radius: 5px;
-  background: linear-gradient(lighten(rgb(206, 62, 26), 10%), darken(rgb(206, 62, 26), 8%));
-  color: rgb(236, 212, 204);
-  box-shadow: 1px 1px 2px 1px #2a1b1062,
-              0px 0px 10px rgba(206, 62, 26, 0.5),
-              inset 0 0 3px rgba(26, 17, 17, 0.918);
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
-  transition: .3s;
-  outline: none;
 
   .fa-long-arrow-alt-left {
     margin-right: 18px;
@@ -34,14 +31,6 @@
     margin-left: 18px;
   }
 
-  &:hover {
-    border: 3px solid lighten(rgb(156, 57, 23), 3%);
-    box-shadow: 1px 1px 2px 1px #2a1b1062,
-                0px 0px 8px rgba(206, 62, 26, 0.6),
-                inset 0 0 3px rgba(26, 17, 17, 0.609);
-    transition: .4s;
-    transform: scale(1.03);
-  }
 }
 
 .solution-editor {
@@ -68,25 +57,11 @@
 }
 
 .reveal-answer {
-  animation: reveal 2s ease;
-  animation-fill-mode: forwards;
-
-  &::before {
-    animation: reveal2 2s ease;
-    animation-fill-mode: forwards;
-    transform: rotate3d(0, 1, 0, 180deg);
-  }
+  @include animations(reveal, reveal2);
 }
 
 .hide-answer {
-  animation: revealback 2s ease;
-  animation-fill-mode: forwards;
-
-  &::before {
-    animation: reveal2two 2s ease;
-    animation-fill-mode: forwards;
-    transform: rotate3d(0, 1, 0, 180deg);
-  }
+  @include animations(revealback, reveal2two);
 }
 
 @keyframes reveal {
@@ -108,7 +83,7 @@
 }
 
 @keyframes reveal2 {
-  0%, 23% {
+  0%, 26% {
     opacity: 1;
   }
   37%, 100% {
@@ -120,7 +95,7 @@
   0%, 28% {
     opacity: 0;
   }
-  43%, 100% {
+  34%, 100% {
     opacity: 1;
   }
 }
