@@ -12,23 +12,23 @@ self.__precacheManifest = [
     "url": "/rabbit-hole/static/js/runtime~main.77f16b63.js"
   },
   {
-    "revision": "c3ef7f1b815e6566b39e",
-    "url": "/rabbit-hole/static/js/main.c3ef7f1b.chunk.js"
+    "revision": "f82f72d37fbd55ce3a09",
+    "url": "/rabbit-hole/static/js/main.f82f72d3.chunk.js"
   },
   {
     "revision": "10ca9e29326c5d2747bf",
     "url": "/rabbit-hole/static/js/1.10ca9e29.chunk.js"
   },
   {
-    "revision": "c3ef7f1b815e6566b39e",
-    "url": "/rabbit-hole/static/css/main.3ea6cb5a.chunk.css"
+    "revision": "f82f72d37fbd55ce3a09",
+    "url": "/rabbit-hole/static/css/main.b7f342d4.chunk.css"
   },
   {
     "revision": "10ca9e29326c5d2747bf",
     "url": "/rabbit-hole/static/css/1.5346304a.chunk.css"
   },
   {
-    "revision": "0bfabf5f45520af3c022f7abbcad37ec",
+    "revision": "7e352f344c95a49b25bd1e53d8eb94c2",
     "url": "/rabbit-hole/index.html"
   }
 ];
