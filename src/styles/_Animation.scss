@@ -3,6 +3,8 @@
   height: 100px;
   background: url('bugs.png');
   background-size: cover;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .animation-window {
@@ -122,8 +124,7 @@
   .bunny {
     margin: 0 auto;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: flex-end;
   }
 }
 
