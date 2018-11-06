@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/rabbit-hole/static/css/1.5346304a.chunk.css"
   },
   {
-    "revision": "7e352f344c95a49b25bd1e53d8eb94c2",
+    "revision": "2a3715f44a55535295e15cbf940da1ee",
     "url": "/rabbit-hole/index.html"
   }
 ];
