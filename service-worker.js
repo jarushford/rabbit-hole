@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/rabbit-hole/precache-manifest.3664c4078bcdafeb03abf4809262b6eb.js"
+  "/rabbit-hole/precache-manifest.b41b429cdd859a5bbfa4027cc8328689.js"
 );
 
 workbox.clientsClaim();

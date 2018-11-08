@@ -12,23 +12,23 @@ self.__precacheManifest = [
     "url": "/rabbit-hole/static/js/runtime~main.77f16b63.js"
   },
   {
-    "revision": "f82f72d37fbd55ce3a09",
-    "url": "/rabbit-hole/static/js/main.f82f72d3.chunk.js"
+    "revision": "35255764d9bf15736f54",
+    "url": "/rabbit-hole/static/js/main.35255764.chunk.js"
   },
   {
-    "revision": "10ca9e29326c5d2747bf",
-    "url": "/rabbit-hole/static/js/1.10ca9e29.chunk.js"
+    "revision": "794cd9630f04836bc0d1",
+    "url": "/rabbit-hole/static/js/1.794cd963.chunk.js"
   },
   {
-    "revision": "f82f72d37fbd55ce3a09",
-    "url": "/rabbit-hole/static/css/main.b7f342d4.chunk.css"
+    "revision": "35255764d9bf15736f54",
+    "url": "/rabbit-hole/static/css/main.2c21fd86.chunk.css"
   },
   {
-    "revision": "10ca9e29326c5d2747bf",
-    "url": "/rabbit-hole/static/css/1.5346304a.chunk.css"
+    "revision": "794cd9630f04836bc0d1",
+    "url": "/rabbit-hole/static/css/1.3340138f.chunk.css"
   },
   {
-    "revision": "2a3715f44a55535295e15cbf940da1ee",
+    "revision": "b7647da2cd1ee73a814468345719bc26",
     "url": "/rabbit-hole/index.html"
   }
 ];
