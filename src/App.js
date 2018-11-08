@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Demo from './Demo';
 import Practice from './Practice';
+import Button from './Button';
 import './styles/Main.scss';
 
 export default class App extends Component {
@@ -15,6 +16,11 @@ export default class App extends Component {
     this.setState({
       currentPage: page
     })
+    if (page === 'landing') {
+      document.querySelector('html').classList.remove('gradient');
+    } else {
+      document.querySelector('html').classList.add('gradient');
+    }
   }
 
   renderCurrentPage() {
@@ -24,14 +30,10 @@ export default class App extends Component {
           <h1>Rabbit Hole</h1>
           <h2>navigating recursion</h2>
           <div className="buttons">
-            <button onClick={() => {
-              this.goToPage('demo');
-              document.querySelector('html').classList.add('gradient');
-              }}>What is Recursion?</button>
-            <button onClick={() => {
-              this.goToPage('practice')
-              document.querySelector('html').classList.add('gradient');
-              }}>Practice</button>
+            <Button functionality={() => this.goToPage('demo')}
+              content={<span>What Is Recursion?</span>} />
+            <Button functionality={() => this.goToPage('practice')}
+              content={<span>Practice</span>} />
           </div>
         </div>,
       demo:

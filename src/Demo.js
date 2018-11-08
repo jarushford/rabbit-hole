@@ -50,10 +50,9 @@ export default class Demo extends Component {
   render() {
     return (
       <div className="demo-page">
-        <Button goToPage={this.props.goToPage}
-          page={'landing'}
+        <Button functionality={() => this.props.goToPage('landing')}
           class={'home-button'}
-          icon={<i className="fas fa-home"></i>} />
+          content={<i className="fas fa-home"></i>} />
         <ModalHeader class={'modal'}
           icon={'fas fa-chevron-circle-right'}
           functionality={this.toggleModal} />
@@ -74,18 +73,12 @@ export default class Demo extends Component {
             }}
             value={quickSortEx}/>
           <div className="button-div">
-            <Button functionality={this.changeAnimationFrame}
-              page={null}
-              direction={-1}
-              text={'Back'}
+            <Button functionality={() => this.changeAnimationFrame(-1)}
               class={'direction-button back-button'}
-              icon={<i className="fas fa-long-arrow-alt-left"></i>} />
-            <Button functionality={this.changeAnimationFrame}
-              page={null}
-              direction={1}
-              text={'Next'}
+              content={<span><i className="fas fa-long-arrow-alt-left"></i>Back</span>} />
+            <Button functionality={() => this.changeAnimationFrame(1)}
               class={'direction-button forward-button'}
-              icon={<i className="fas fa-long-arrow-alt-right"></i>} />
+              content={<span>Next<i className="fas fa-long-arrow-alt-right"></i></span>} />
           </div>
         </div>
         <Animation animationFrame={this.state.animationFrame}

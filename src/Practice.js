@@ -48,10 +48,9 @@ export default class Practice extends Component {
   render() {
     return (
       <div className="practice-page" onClick={this.toggleSolution}>
-        <Button goToPage={this.props.goToPage}
-          page={'landing'}
+        <Button functionality={() => this.props.goToPage('landing')}
           class={'home-button'}
-          icon={<i className="fas fa-home"></i>} />
+          content={<i className="fas fa-home"></i>} />
         <CodeMirror options={{
             mode: 'javascript',
             theme: 'ambiance',
@@ -67,18 +66,12 @@ export default class Practice extends Component {
           }}
           value={practiceSolutions[this.state.currentProblem]}
           className="solution-editor"/>
-        <Button functionality={this.changeProblem}
-            page={null}
-            direction={-1}
-            text={'Previous'}
+        <Button functionality={() => this.changeProblem(-1)}
             class={'direction-button previous-button'}
-            icon={<i className="fas fa-long-arrow-alt-left"></i>} />
-        <Button functionality={this.changeProblem}
-            page={null}
-            direction={1}
-            text={'Next'}
+            content={<span><i className="fas fa-long-arrow-alt-left"></i>Previous</span>} />
+        <Button functionality={() => this.changeProblem(1)}
             class={'direction-button next-button'}
-            icon={<i className="fas fa-long-arrow-alt-right"></i>} />
+            content={<span>Next<i className="fas fa-long-arrow-alt-right"></i></span>} />
       </div>
     )
   }
