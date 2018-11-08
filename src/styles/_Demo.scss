@@ -3,8 +3,8 @@
   width: 470px;
   height: $height;
   top: $top;
-  left: calc(1% + 35px);
-  background: linear-gradient(to right, rgba(93, 148, 219, 0.356) 90%, #202020);
+  left: calc(.5% + 41px);
+  background: linear-gradient(to right, #20202000 2%, rgba(93, 148, 219, 0.356) 5%, #20202000 99%);
   z-index: 5;
 }
 
