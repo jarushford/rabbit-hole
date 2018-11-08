@@ -12,7 +12,9 @@ export default class Demo extends Component {
     super()
     this.state = {
       animationFrame: 0,
-      highlighterClass: "highlighter0"
+      highlighterClass: "highlighter0",
+      hideModal: false,
+      hideDescriptionModal: true
     }
   }
 
@@ -36,11 +38,15 @@ export default class Demo extends Component {
   }
 
   toggleModal = () => {
-    document.querySelector('.modal').classList.toggle('hide-modal');
+    this.setState({
+      hideModal: !this.state.hideModal
+    })
   }
 
   toggleDescriptionModal = () => {
-    document.querySelector('.description-modal').classList.toggle('hide-description-modal');
+    this.setState({
+      hideDescriptionModal: !this.state.hideDescriptionModal
+    })
   }
 
   render() {
@@ -51,14 +57,16 @@ export default class Demo extends Component {
           content={<i className="fas fa-home"></i>} />
         <ModalHeader class={'modal'}
           icon={'fas fa-chevron-circle-right'}
-          functionality={this.toggleModal} />
+          functionality={this.toggleModal}
+          hideModal={this.state.hideModal} />
         <ModalDropdown class={'modal-dropdown'}
           content={<p><span>Recursion</span> is a programming pattern by which we are able to complete a repeptitive action by calling a function within its own body until a base case is met and we exit the function. Hit the <span className="span2">info slider</span> in the top left and click through the demo for a more in-depth explanation.</p>} />
         <DemoControls highlighterClass={this.state.highlighterClass}
           changeAnimationFrame={this.changeAnimationFrame}/>
-        <ModalHeader class={'description-modal hide-description-modal'}
+        <ModalHeader class={'description-modal'}
           icon={'fas fa-info-circle'}
-          functionality={this.toggleDescriptionModal} />
+          functionality={this.toggleDescriptionModal}
+          hideDescriptionModal={this.state.hideDescriptionModal} />
         <ModalDropdown class={'description-modal-dropdown'}
           content={<p>{captions[this.state.animationFrame]}</p>} />
         <Animation animationFrame={this.state.animationFrame}

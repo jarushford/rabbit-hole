@@ -6,24 +6,24 @@ import practiceSolutions from './util/practiceSolutions';
 import './../node_modules/codemirror/theme/ambiance.css';
 import './../node_modules/codemirror/mode/javascript/javascript';
 import './styles/Main.scss';
+const classNames = require('classnames');
 
 export default class Practice extends Component {
   constructor() {
     super();
     this.state = {
-      currentProblem: 0
+      currentProblem: 0,
+      hideAnswer: true,
+      revealAnswer: false
     }
   }
 
-  toggleSolution(e) {
+  toggleSolution = (e) => {
     if (e.target.classList.contains('solution-editor')) {
-      if (!e.target.classList.contains('reveal-answer')) {
-        e.target.classList.add('reveal-answer');
-        e.target.classList.remove('hide-answer');
-      } else {
-        document.querySelector('.solution-editor').classList.add('hide-answer');
-        document.querySelector('.solution-editor').classList.remove('reveal-answer');
-      }
+      this.setState({
+        hideAnswer: !this.state.hideAnswer,
+        revealAnswer: !this.state.revealAnswer
+      })
     }
   }
 
@@ -31,21 +31,30 @@ export default class Practice extends Component {
     if (this.state.currentProblem === 2 && direction === 1) {
       this.setState({
         currentProblem: 0,
+        hideAnswer: true,
+        revealAnswer: false
       })
     } else if (this.state.currentProblem === 0 && direction === -1) {
       this.setState({
         currentProblem: 2,
+        hideAnswer: true,
+        revealAnswer: false
       })
     } else {
       this.setState({
         currentProblem: this.state.currentProblem + direction,
+        hideAnswer: true,
+        revealAnswer: false
       })
     }
-    document.querySelector('.solution-editor').classList.add('hide-answer');
-    document.querySelector('.solution-editor').classList.remove('reveal-answer');
   }
 
   render() {
+    const editorClass = classNames({
+      'solution-editor': true,
+      'hide-answer': this.state.hideAnswer,
+      'reveal-answer': this.state.revealAnswer
+    })
     return (
       <div className="practice-page" onClick={this.toggleSolution}>
         <Button functionality={() => this.props.goToPage('landing')}
@@ -65,7 +74,7 @@ export default class Practice extends Component {
             readOnly: true
           }}
           value={practiceSolutions[this.state.currentProblem]}
-          className="solution-editor"/>
+          className={editorClass}/>
         <Button functionality={() => this.changeProblem(-1)}
             class={'direction-button previous-button'}
             content={<span><i className="fas fa-long-arrow-alt-left"></i>Previous</span>} />
