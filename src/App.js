@@ -8,8 +8,17 @@ export default class App extends Component {
     super();
     this.state = {
       currentPage: 'landing'
-    }
-    this.pages = {
+    } 
+  }
+
+  goToPage = (page) => {
+    this.setState({
+      currentPage: page
+    })
+  }
+
+  renderCurrentPage() {
+    const pages = {
       landing: 
         <div className="landing-page">
           <h1>Rabbit Hole</h1>
@@ -30,15 +39,10 @@ export default class App extends Component {
       practice:
         <Practice goToPage={this.goToPage} />,
     }
-  }
-
-  goToPage = (page) => {
-    this.setState({
-      currentPage: page
-    })
+    return pages[this.state.currentPage];
   }
 
   render() {
-    return (this.pages[this.state.currentPage]);
+    return this.renderCurrentPage();
   }
 }
