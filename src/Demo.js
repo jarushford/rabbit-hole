@@ -60,7 +60,7 @@ export default class Demo extends Component {
           functionality={this.toggleModal}
           hideModal={this.state.hideModal} />
         <ModalDropdown class={'modal-dropdown'}
-          content={<p><span>Recursion</span> is a programming pattern by which we are able to complete a repeptitive action by calling a function within its own body until a base case is met and we exit the function. Hit the <span className="span2">info slider</span> in the top left and click through the demo for a more in-depth explanation.</p>} />
+          content={<p><span>Recursion</span> is a programming pattern by which we are able to complete a repetitive action by calling a function within its own body until a base case is met and we exit the function. Hit the <span className="span2">info slider</span> in the top left and click through the demo for a more in-depth explanation.</p>} />
         <DemoControls highlighterClass={this.state.highlighterClass}
           changeAnimationFrame={this.changeAnimationFrame}/>
         <ModalHeader class={'description-modal'}
